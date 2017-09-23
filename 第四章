@@ -41,5 +41,9 @@ MySQL的字符集的设置：
     mysqld-default-character-set=utf-8
     或者在编译的时候指定：
     ./configure-with-charset=utf-8
-   
+    
+  如果没有特别的指定服务器字符集，默认使用latinl作为服务器字符集。上面三种设置的方式都只指定了字符集，没有指定校对规则，
+  这样是使用该字符集的默认校对规则，如果要使用该字符集的非默认校对规则，则需要在指定字符集的同时指定校对规则。
+  
+  可以使用show variables like 'character_set_server' ;命令查询当前服务器的字符集和校对规则。
   
